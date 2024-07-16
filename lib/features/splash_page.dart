@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lovecalculation/features/home/presentation/pages/home_page.dart';
+import 'package:lovecalculation/cores/helper/strings.dart';
+import 'package:lovecalculation/cores/styles/style.dart';
+import 'package:lovecalculation/features/landing/presentation/landing_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
@@ -14,7 +16,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 2), () {
-      Navigator.of(context).pushReplacementNamed(HomePage.routeName);
+      Navigator.of(context).pushReplacementNamed(LandingPage.routeName);
     });
   }
 
@@ -22,9 +24,17 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.blue,
-        child: const Center(
-          child: Text('Love Calculation'),
+        color: Colors.white,
+        child: const Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image(image: AssetImage(logoSplash)),
+            SizedBox(height: 5),
+            Text(
+              appName,
+              style: appNameStyledText,
+            ),
+          ],
         ),
       ),
     );

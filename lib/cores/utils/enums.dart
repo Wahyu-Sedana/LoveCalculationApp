@@ -1,0 +1,1 @@
+enum TypeField { yourName, hisName }
